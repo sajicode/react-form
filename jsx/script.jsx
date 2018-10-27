@@ -1,4 +1,1 @@
-ReactDOM.render( 
-  <Form />,
-  document.getElementById('form')
-)
+ReactDOM.render(<Content />, document.getElementById('content'));

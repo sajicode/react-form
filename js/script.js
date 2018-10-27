@@ -1,1 +1,1 @@
-ReactDOM.render(React.createElement(Form, null), document.getElementById('form'));
+ReactDOM.render(React.createElement(Content, null), document.getElementById('content'));
