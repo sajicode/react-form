@@ -2,14 +2,12 @@
 	"name": "react-form",
 	"version": "1.0.0",
 	"description": "",
-	"main": "index.js",
+	"main": "script.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"build-form": "./node_modules/.bin/babel jsx -d js -w"
 	},
-	"keywords": [
-		"react.js"
-	],
+	"keywords": [ "react.js" ],
 	"author": "Adams Banjo",
 	"license": "MIT",
 	"devDependencies": {
