@@ -47,20 +47,30 @@ class Content extends React.Component {
   }
 
   handleSubmit(event) {
-    console.log(event.target.value, event.target.checked); // this.setState({ firstname: event.target.value });
+    this.handleFirstNameChange;
+    this.handleLastNameChange;
+    this.handleEmailChange;
+    this.handleAddressChange;
+    this.handlePhoneChange;
   }
 
   handleFirstNameChange(event) {
     this.setState({
       firstname: event.target.value
     });
-  } // handleLastNameChange(event) {
-  // 	this.setState({ lastname: event.target.value });
-  // }
-  // handleEmailChange(event) {
-  // 	this.setState({ email: event.target.value });
-  // }
+  }
 
+  handleLastNameChange(event) {
+    this.setState({
+      lastname: event.target.value
+    });
+  }
+
+  handleEmailChange(event) {
+    this.setState({
+      email: event.target.value
+    });
+  }
 
   handlePhoneChange(event) {
     this.setState({
@@ -94,7 +104,7 @@ class Content extends React.Component {
       name: "firstname",
       placeholder: "Firstname",
       className: "form-control form-control-lg",
-      onChange: this.handleFirstNameChange
+      onChange: this.handleChange
     })), React.createElement("div", {
       className: "form-group"
     }, React.createElement("input", {
@@ -102,7 +112,7 @@ class Content extends React.Component {
       name: "lastname",
       placeholder: "Lastname",
       className: "form-control form-control-lg",
-      onChange: this.handleLastNameChange
+      onChange: this.handleChange
     })), React.createElement("div", {
       className: "form-group"
     }, React.createElement("input", {
@@ -110,7 +120,7 @@ class Content extends React.Component {
       name: "email",
       placeholder: "Email",
       className: "form-control form-control-lg",
-      onChange: this.handleEmailChange
+      onChange: this.handleChange
     })), React.createElement("div", {
       className: "form-group"
     }, React.createElement("input", {
@@ -138,7 +148,7 @@ class Content extends React.Component {
       className: "form-group"
     }, React.createElement("input", {
       type: "text",
-      onChange: this.handlePhoneChange,
+      onChange: this.handleChange,
       placeholder: "Phone Number",
       className: "form-control"
     })), React.createElement("div", {
@@ -147,7 +157,7 @@ class Content extends React.Component {
       name: "address",
       className: "form-control",
       rows: "3",
-      onChange: this.handleAddressChange
+      onChange: this.handleChange
     })), React.createElement("div", {
       className: "form-group"
     }, React.createElement("input", {
@@ -184,7 +194,9 @@ class Content extends React.Component {
       onClick: this.handleSubmit,
       className: "btn btn-danger"
     }, "Register")), React.createElement(Display, {
-      fname: this.state.firstname
+      fname: this.state.firstname,
+      lname: this.state.lastname,
+      mail: this.state.email
     }));
   }
 

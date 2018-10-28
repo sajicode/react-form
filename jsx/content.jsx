@@ -40,18 +40,21 @@ class Content extends React.Component {
 		this.setState({ languageGroup: obj });
 	}
 	handleSubmit(event) {
-		console.log(event.target.value, event.target.checked);
-		// this.setState({ firstname: event.target.value });
+		this.handleFirstNameChange;
+		this.handleLastNameChange;
+		this.handleEmailChange;
+		this.handleAddressChange;
+		this.handlePhoneChange;
 	}
 	handleFirstNameChange(event) {
 		this.setState({ firstname: event.target.value });
 	}
-	// handleLastNameChange(event) {
-	// 	this.setState({ lastname: event.target.value });
-	// }
-	// handleEmailChange(event) {
-	// 	this.setState({ email: event.target.value });
-	// }
+	handleLastNameChange(event) {
+		this.setState({ lastname: event.target.value });
+	}
+	handleEmailChange(event) {
+		this.setState({ email: event.target.value });
+	}
 	handlePhoneChange(event) {
 		this.setState({ phoneNumber: event.target.value });
 	}
@@ -79,7 +82,7 @@ class Content extends React.Component {
 							name="firstname"
 							placeholder="Firstname"
 							className="form-control form-control-lg"
-							onChange={this.handleFirstNameChange}
+							onChange={this.handleChange}
 						/>
 					</div>
 					<div className="form-group">
@@ -88,7 +91,7 @@ class Content extends React.Component {
 							name="lastname"
 							placeholder="Lastname"
 							className="form-control form-control-lg"
-							onChange={this.handleLastNameChange}
+							onChange={this.handleChange}
 						/>
 					</div>
 					<div className="form-group">
@@ -97,7 +100,7 @@ class Content extends React.Component {
 							name="email"
 							placeholder="Email"
 							className="form-control form-control-lg"
-							onChange={this.handleEmailChange}
+							onChange={this.handleChange}
 						/>
 					</div>
 					<div className="form-group">
@@ -131,18 +134,13 @@ class Content extends React.Component {
 					<div className="form-group">
 						<input
 							type="text"
-							onChange={this.handlePhoneChange}
+							onChange={this.handleChange}
 							placeholder="Phone Number"
 							className="form-control"
 						/>
 					</div>
 					<div className="form-group">
-						<textarea
-							name="address"
-							className="form-control"
-							rows="3"
-							onChange={this.handleAddressChange}
-						/>
+						<textarea name="address" className="form-control" rows="3" onChange={this.handleChange} />
 					</div>
 					<div className="form-group">
 						<input
@@ -188,7 +186,7 @@ class Content extends React.Component {
 						Register
 					</button>
 				</form>
-				<Display fname={this.state.firstname} />
+				<Display fname={this.state.firstname} lname={this.state.lastname} mail={this.state.email} />
 			</div>
 		);
 	}
