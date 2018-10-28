@@ -59,6 +59,12 @@ class Content extends React.Component {
 		this.setState({ address: event.target.value });
 	}
 	handleChange(event) {
+		const target = event.target;
+		const value = target.type === 'checkbox' ? target.checked : target.value;
+		const name = target.name;
+		this.setState({
+			[name]: value
+		});
 		console.log('onChange event: ', event.target.value, event.target.checked);
 	}
 
@@ -106,9 +112,8 @@ class Content extends React.Component {
 						<input
 							type="radio"
 							name="genderGroup"
-							value="female"
 							checked={this.state.genderGroup['female']}
-							onChange={this.handleGender}
+							onChange={this.handleChange}
 							className="form-control mr-2"
 						/>
 						Female
@@ -117,9 +122,8 @@ class Content extends React.Component {
 						<input
 							type="radio"
 							name="genderGroup"
-							value="male"
 							checked={this.state.genderGroup['male']}
-							onChange={this.handleGender}
+							onChange={this.handleChange}
 							className="form-control mr-2"
 						/>
 						Male
@@ -145,9 +149,8 @@ class Content extends React.Component {
 							className="form-check"
 							type="checkbox"
 							name="languageGroup"
-							value="javascript"
 							checked={this.state.languageGroup['javascript']}
-							onChange={this.handleLanguage}
+							onChange={this.handleChange}
 						/>
 						JavaScript
 					</div>
@@ -156,9 +159,8 @@ class Content extends React.Component {
 							className="form-check"
 							type="checkbox"
 							name="languageGroup"
-							value="ruby"
 							checked={this.state.languageGroup['ruby']}
-							onChange={this.handleLanguage}
+							onChange={this.handleChange}
 						/>
 						Ruby
 					</div>
@@ -167,9 +169,8 @@ class Content extends React.Component {
 							className="form-check"
 							type="checkbox"
 							name="languageGroup"
-							value="go"
 							checked={this.state.languageGroup['go']}
-							onChange={this.handleLanguage}
+							onChange={this.handleChange}
 						/>
 						Go
 					</div>
@@ -178,9 +179,8 @@ class Content extends React.Component {
 							className="form-check"
 							type="checkbox"
 							name="languageGroup"
-							value="php"
 							checked={this.state.languageGroup['php']}
-							onChange={this.handleLanguage}
+							onChange={this.handleChange}
 						/>
 						PHP
 					</div>
